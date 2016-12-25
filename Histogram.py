@@ -87,3 +87,16 @@ plt.colorbar(p)
 # finally, let's examine the dimensionality of one of
 # the 2D histograms
 print "2D histogram shape: %s, with %d values" % (hist.shape, hist.flatten().shape[0])
+
+#Finally for the 3d histogram 
+
+# our 2D histogram could only take into account 2 out
+# of the 3 channels in the image so now let's build a
+# 3D color histogram (utilizing all channels) with 8 bins
+# in each direction -- we can't plot the 3D histogram, but
+# the theory is exactly like that of a 2D histogram, so
+# we'll just show the shape of the histogram
+hist = cv2.calcHist([image], [0, 1, 2],
+	None, [8, 8, 8], [0, 256, 0, 256, 0, 256])
+print "3D histogram shape: %s, with %d values" % (
+	hist.shape, hist.flatten().shape[0])
