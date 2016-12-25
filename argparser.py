@@ -8,3 +8,4 @@ parser.add_argument('--sum', dest='accumulate', action='store_const',
 
 args = parser.parse_args()
 print(args.accumulate(args.integers))
+
