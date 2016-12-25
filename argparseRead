@@ -1,0 +1,18 @@
+Reading using Argument Parser object 
+  parser = argparse.ArgumentParser(description='Process some integers.')
+
+Filling an ArgumentParser with information about program arguments is done by making calls to the add_argument() method.
+  parser.add_argument('integers', metavar='N', type=int, nargs='+', help='an integer for the accumulator')
+
+Later, calling parse_args() will return an object with two attributes, integers and accumulate. 
+The integers attribute will be a list of one or more ints, and the accumulate attribute will be either the sum() function,
+if --sum was specified at the command line, or the max() function if it was not.
+
+Argument parser reads all the arguments and converts them to Namespace object. 
+INPUT -- parser.parse_args(['--sum', '7', '-1', '42'])
+OUTPUT --Namespace(accumulate=<built-in function sum>, integers=[7, -1, 42])
+
+In a script, parse_args() will typically be called with no arguments,
+and the ArgumentParser will automatically determine the command-line arguments from sys.argv.
+
+Complete data provided after at - https://docs.python.org/3/library/argparse.html
