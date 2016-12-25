@@ -39,11 +39,18 @@ for (chan, color) in zip(chans, colors):
 	# concatenate the resulting histograms for each
 	# channel
 	hist = cv2.calcHist([chan], [0], None, [256], [0, 256])
+	#Why is this used is something you can figure out easily. 
+	#If you remove it you will get three different plots computing different
 	features.extend(hist)
  
-	# plot the histogram
+	#### plot the histogram
 	plt.plot(hist, color = color)
 	plt.xlim([0, 256])
- 
- print ("flattened feature vector size: %d" % (np.array(features).flatten().shape))
+# here we are simply showing the dimensionality of the
+# flattened color histogram 256 bins for each channel
+# x 3 channels = 768 total values -- in practice, we would
+# normally not use 256 bins for each channel, a choice
+# between 32-96 bins are normally used, but this tends
+# to be application dependent
+print ("flattened feature vector size: %d" % (np.array(features).flatten().shape))
  
