@@ -7,6 +7,7 @@ import cv2
 # construct the argument parser and parse the arguments
 # Know more about argparse 
 
+#Information about argaparser is in another repository 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required = True, help = "Path to the image")
 args = vars(ap.parse_args())
