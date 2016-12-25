@@ -5,7 +5,7 @@ import argparse
 import cv2
  
 # construct the argument parser and parse the arguments
-#Know more about argparse 
+# Know more about argparse 
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required = True, help = "Path to the image")
