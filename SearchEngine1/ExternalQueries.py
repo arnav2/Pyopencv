@@ -1,6 +1,6 @@
 # import the necessary packages
 from histogram import RGBHistogram
-from searcher import Searcher
+from Searcherclass1 import Searcher
 import numpy as np
 import argparse
 import cPickle
